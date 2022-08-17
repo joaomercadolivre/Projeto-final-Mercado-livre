@@ -8,4 +8,7 @@ import java.util.List;
 public interface IShippingRepo extends JpaRepository<ShippingCategory, Long> {
 
     List<ShippingCategory> findByShipping(Long id);
+
+
+
 }
