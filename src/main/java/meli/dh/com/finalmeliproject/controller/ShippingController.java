@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/shipping")
+@RequestMapping("/shipping/category")
 public class ShippingController {
 
     @Autowired
@@ -18,13 +18,13 @@ public class ShippingController {
 
     @GetMapping
     public List<ShippingDTO> listShipping(Long id){
-        return service.listShippingDTO(id);
+        return service.listShippingCategoryDTO(id);
     }
 
     @Transactional
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> remover(@PathVariable Long id){
-        return service.deleteShipping(id);
+    public ResponseEntity<?> delete(@PathVariable Long id){
+        return service.deleteShippingCategory(id);
 
     }
 

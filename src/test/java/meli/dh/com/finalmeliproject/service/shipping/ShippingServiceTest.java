@@ -27,7 +27,7 @@ public class ShippingServiceTest {
     public void nullShippingId() {
         List<ShippingCategory> shippingDTOS = repo.findAll();
 
-        Mockito.when(service.listShippingDTO(null)).thenReturn(
+        Mockito.when(service.listShippingCategoryDTO(null)).thenReturn(
                 ShippingDTO.shippingCategories(shippingDTOS));
 
 
@@ -38,7 +38,7 @@ public class ShippingServiceTest {
     public void passingShippingId() {
         List<ShippingCategory> shippingDTOS = repo.findAll();
 
-        Mockito.when(service.listShippingDTO(1L)).thenReturn(
+        Mockito.when(service.listShippingCategoryDTO(1L)).thenReturn(
                 ShippingDTO.shippingCategories(shippingDTOS));
 
 

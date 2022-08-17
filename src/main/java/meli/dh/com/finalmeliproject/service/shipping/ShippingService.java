@@ -18,7 +18,7 @@ public class ShippingService {
     private IShippingRepo repo;
 
 
-    public List<ShippingDTO> listShippingDTO(Long id) {
+    public List<ShippingDTO> listShippingCategoryDTO(Long id) {
         if (id == null) {
             List<ShippingCategory> shippingCategories = repo.findAll();
             return ShippingDTO.shippingCategories(shippingCategories);
@@ -29,9 +29,9 @@ public class ShippingService {
 
     }
 
-    public ResponseEntity<?> deleteShipping(Long id) {
+    public ResponseEntity<?> deleteShippingCategory(Long id) {
         repo.deleteById(id);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok("category of " + id + " was deleted");
 
     }
 
